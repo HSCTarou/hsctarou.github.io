@@ -18,22 +18,57 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@example.com
+title: HSCTarou.io
+email: HSCTarou@protonmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Personal blog to keep track of my walktroughs and writeups. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: HSCTarou
+github_username:  HSCTarou
+
+
+# Site Author
+author:
+  name             : "HSCTarou"
+  avatar           : /images/hei-square.png
+  bio              : "Cyber Security Enthusiast"
+#  location         : "Everywhere"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: mailto:HSCTarou@protonmail.com
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/HSCTarou"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/HSCTarou"
+    - label: "HackTheBox"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.hackthebox.eu/profile/215564"
+    - label: "TryHackMe"
+      icon: "fas fa-fw fa-link"
+      url: "https://tryhackme.com/p/HSCTarou"
+
 
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes@4.19.3"
+minimal_mistakes_skin: dark
+
 plugins:
   - jekyll-feed
   - jekyll-include-cache
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
