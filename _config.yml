@@ -21,7 +21,7 @@
 title: HSCTarou.io
 email: HSCTarou@protonmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Personal blog to keep track of my walktroughs and writeups. 
+  Personal blog to keep track of my walkthroughs and writeups. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: HSCTarou
@@ -60,6 +60,7 @@ minimal_mistakes_skin: dark
 plugins:
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-remote-theme
 
 defaults:
   # _posts
