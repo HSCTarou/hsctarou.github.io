@@ -27,6 +27,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: HSCTarou
 github_username:  HSCTarou
 
+favicon: /images/favicon.png
 
 # Site Author
 author:
