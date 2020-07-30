@@ -4,6 +4,9 @@ title:  "Blackhole Challenge Writeup - HackTheBox"
 date:   2020-07-26 12:20:55 -0400
 classes: wide
 categories: HTB
+tags:
+  - CTF
+  - Misc
 ---
 
 En esta ocasión estaremos realizando el Challenge **Blackhole** de la plataforma [HackTheBox](https://hackthebox.eu) que pertenece a la categoria MISC. A continuación el detalle desde la plataforma:

@@ -4,6 +4,9 @@ title:  "Fuzz Challenge Writeup - HackTheBox"
 date:   2020-07-27 20:00:00 -0400
 classes: wide
 categories: HTB
+tags:
+ - CTF
+ - Web
 ---
 
 ![Challenge Info](/images/HTB/Fuzz/01-web.png "Challenge Info"){: .align-center}
