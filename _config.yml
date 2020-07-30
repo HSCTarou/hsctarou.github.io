@@ -118,7 +118,7 @@ compress_html:
 
 # Analytics
 analytics:
-  provider: "google-gtag"
+  provider: "google"
 #  provider               : "google" # false (default), "google", "google-universal", "custom"
   google:
     tracking_id          : "UA-174187201-1"
