@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: HSCTarou.io
+title: HSCTarou
 email: HSCTarou@protonmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Personal blog to keep track of my walkthroughs and writeups. 
@@ -61,6 +61,10 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jemoji
 
 defaults:
   # _posts
@@ -71,6 +75,15 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
+
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
