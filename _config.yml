@@ -28,6 +28,7 @@ twitter_username: HSCTarou
 github_username:  HSCTarou
 
 favicon: /images/favicon.png
+breadcrumbs: true
 
 # Site Author
 author:
@@ -114,6 +115,14 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+# Analytics
+analytics:
+  provider: "google-gtag"
+#  provider               : "google" # false (default), "google", "google-universal", "custom"
+  google:
+    tracking_id          : "UA-174187201-1"
+    anonymize_ip         : false # (default)
 
 # Exclude from processing.
 # The following items will not be processed, by default.
