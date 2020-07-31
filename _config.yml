@@ -114,14 +114,14 @@ incremental: false
 compress_html:
   clippings: all
   ignore:
-    envs: production
+    envs: development
 
 # Analytics
 analytics:
   provider: "google"
   google:
-    tracking_id          : "UA-174187201-1"
-    anonymize_ip         : false # (default)
+    tracking_id: "UA-174187201-1"
+    anonymize_ip: false # (default)
 
 # Exclude from processing.
 # The following items will not be processed, by default.
