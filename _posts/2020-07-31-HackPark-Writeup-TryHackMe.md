@@ -12,7 +12,7 @@ tags:
  - winPEAS
 ---
 
-This time we will be resolving the HackPark room from [TryHackMe](https://tryhackme.com/). This box is part of the Offensive pentesing learning path so will be very useful for our OSCP journey.
+This time we will be resolving the [HackPark](https://tryhackme.com/room/hackpark) room from [TryHackMe](https://tryhackme.com/). This box is part of the Offensive pentesing learning path so will be very useful for our OSCP journey.
 
 ## Room info
 
@@ -23,7 +23,7 @@ This time we will be resolving the HackPark room from [TryHackMe](https://tryhac
 
 ## Enumeration
 
-For some reason, nmap is not giving any information about the open ports for this machine, but I will anticipate that we have ports **80** and **3380** open.
+For some reason, nmap is not giving any information about the open ports for this machine, but I will anticipate that we have ports **80** and **3389** open.
 
 First of all, taking a look of the website ```http://10.10.203.246``` we see the following landing page:
 
@@ -59,7 +59,7 @@ For the tool to work, we need to specify the following information:
 - The target IP is ```10.10.203.246```.
 - The login form path will be ```/Account/login.aspx```.
 
-For the rest, we will have to do a little research on the login page. Using the Developer tools from our browser we can see how the login form send the request.
+For the rest, we will have to do a little research on the login page. Using the Developer tools from our browser we can see how the login form sends the request.
 
 The network tab will show the request method whenever we make a submit on the login form. So, let's go ahead and make a request with the following params:
 
@@ -68,7 +68,7 @@ The network tab will show the request method whenever we make a submit on the lo
 
 ![Method](/images/THM/HackPark/03-form-method.png "Method"){: .align-center}
 
-Now we know the form is using POST method to make the request and using the **Edit and Resend** button in the bottom right corner we can see the raw body request. Finally, we also get the message whenever a wrong user/pass is entered: ```Login failed```. 
+Now we know the form is using POST method to make the request, and using the **Edit and Resend** button in the bottom right corner we can see the raw body request. Finally, we also got the message whenever a wrong user/pass is entered: ```Login failed```. 
 
 ![Request](/images/THM/HackPark/03-request.png "Request"){: .align-center}
 
@@ -127,7 +127,7 @@ It is a exploit written in C# which will allow us to get a reverse shell exploit
 listening on [any] 443 ...
 ```
 
-- Rename the exploit as: ```PostList.ascx```.
+- Rename the exploit as: ```PostView.ascx```.
 - In the CMS, go to ***Content > Posts > New*** and add a new post uploading our ```PostView.ascx``` file. Click on the open folder icon.
 
 ![Exploit Upload 1](/images/THM/HackPark/06-upload-01.png "Exploit Upload 1"){: .align-center}

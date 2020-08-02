@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Blackhole Challenge Writeup - HackTheBox"
+title:  "Blackhole Challenge Writeup [ES] - HackTheBox"
 date:   2020-07-26 12:20:55 -0400
 classes: wide
 categories: HTB
@@ -39,7 +39,7 @@ stegcracker hawking.jpg /usr/share/wordlists/rockyou.txt
 
 Al cabo de unos minutos obtenemos un match con la contraseña ***hawkingez*** y como resultado nos genera el archivo ```hawking.jpg.out```. Le aplicamos un ```cat``` y vemos una cadena de caracteres que parecen estar codificados en **base64**. 
 
-Luego de realizar dos decodificaciones en base64, obtendremos el mensaje que se visualiza a continuación, el cual tiene un formato similar al de la **flag** que buscamos:
+Luego de realizar dos decodificaciones seguidas en base64, obtendremos el mensaje que se visualiza a continuación, el cual tiene un formato similar al de la **flag** que buscamos:
 
 ![Decode](/images/HTB/Blackhole/05-decode1.png "Decode"){: .align-center}
 
@@ -48,6 +48,6 @@ Efqbtqz Iuxxumy Tmiwuzs ime mz Qzsxuet ftqadqfuomx btkeuouef, oaeyaxasuef, mzp m
 TFN{Z3hqD_x3F_fT3_n4eFmDp5_S3f_K0g_p0iZ}
 ```
 
-A simple vista el mensaje parece estar codificado en cifrado césar o **ROT13**, por lo que con la ayuda de [CyberChef](https://gchq.github.io/CyberChef/) luego de unos intentos, obtendremos nuestro mensaje decodificado junto con la **flag**.
+A simple vista el mensaje parece estar codificado en **ROT13**, por lo que con la ayuda de [CyberChef](https://gchq.github.io/CyberChef/), luego de unos intentos, obtendremos nuestro mensaje decodificado junto con la **flag**.
 
 ![Decode 2](/images/HTB/Blackhole/06-decode2.png "Decode 2"){: .align-center}
