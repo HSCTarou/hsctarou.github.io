@@ -22,7 +22,7 @@ This time we will be resolving the [HackPark](https://tryhackme.com/room/hackpar
 
 For some reason, nmap is not giving any information about the open ports for this machine, but I'll anticipate that we have ports **80** and **3389** open.
 
-First of all, taking a look of the website ```http://10.10.203.246``` we see the following landing page:
+First of all, taking a look of the website ```http://10.10.203.246``` we can see the following landing page:
 
 ![Landing Page](/images/THM/HackPark/00-landing-page.png "Landing Page"){: .align-center}
 
@@ -32,7 +32,7 @@ Moving on, the next interesting section of the website is the **Log In** panel o
 
 ![Right Menu](/images/THM/HackPark/02-login.png "Right Menu"){: .align-center}
 
-So, we click on **Log In** and get to a login page. In the landing page we see **Blogengine.net** and a form asking for user and password. 
+So, we click on **Log In** and get to a login page. In the landing page we see **Blogengine.net** and a typical login form for username and password inputs.
 
 URL: ```http://10.10.203.246/Account/login.aspx```
 
@@ -90,7 +90,7 @@ After getting all the information, the full command looks like this:
 ```bash
 hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.10.203.246 http-post-form "/Account/login.aspx:__VIEWSTATE=DuOBP%2BgZJeq6AMydj5niN1uZM%2FDPpZMaxfWo5oEC4brEJy1oBLy29HUrOfHMJVOGXkG1660e6jVooc9Yq08XSwXuS6%2BEAz0wmCd9zrPJ%2FvRTEfvW4%2FydsHFgcUy%2BaIkSagapG4M4u0EK%2FxLTi5gChTWoajmuqFTxAa8qQQJOi7n9k0Fmpfq1MZzahKDFn5OJvCfq6JW%2FQVV4w%2FwQsnL03wpViAbcqU5CAVBTo9igmfmnTanl64dDgoz8ZkXx0sfLD8O136c%2BVm6kcfY3olmQUP34NqflsNH9hVBYr4piqoMqK%2BQjG2SI4cgyyRbcUjLnOryib9veu%2BsGI147wYnLVmnQT1HR0uePIIBJ%2BA3UQJZngtnK&__EVENTVALIDATION=yxXvvmOhIbyz01WxElUbLdtpbMGxCzl5Rt2yC8ppVo8aEkoGj61ik751%2FMdx5Ea6wPF4FA5bjdCtJ%2BJ2terqrBoDEHH8mETsjtorsuBx5xG0AxeHmiNLCZGHt0BDXhVuDeihrfZuN6Wb89YIQvzsLZT4aFAD2DEeuiF3stBpJy%2Bco6jP&ctl00%24MainContent%24LoginUser%24UserName=^USER^&ctl00%24MainContent%24LoginUser%24Password=^PASS^&ctl00%24MainContent%24LoginUser%24LoginButton=Log+in:Login failed" -t 60 -V
 ```
-So we launch hydra and in a couple of minutes we get the password for the admin user.
+So we launch hydra and in a couple of minutes we get the password for the user admin.
 
 ![Hydra bruteforcing](/images/THM/HackPark/02-hydra-BF-blur.png "Hydra bruteforcing"){: .align-center}
 
@@ -103,7 +103,7 @@ With this information, now we proceed to take a look on exploitdb if there is al
 ![Searchsploit](/images/THM/HackPark/04-searchsploit.png "Searchsploit"){: .align-center}
 
 
-There is indeed an exploit available for our CMS version. Lets take a look to the one named ***"BlogEngine.NET 3.3.6/3.3.7 - 'dirPath' Directory Traversal / Remote Code Execution"*** and read it carefully.
+There is indeed an exploit available for our CMS version. Lets take a look to the one named [BlogEngine.NET 3.3.6/3.3.7 - 'dirPath' Directory Traversal / Remote Code Execution](https://www.exploit-db.com/exploits/46353) and read it carefully.
 
 It is a exploit written in C# which will allow us to get a reverse shell exploiting a vulnerable code in the ```PostList.ascx.cs``` file. To abuse this vulnerability, we have to do the following:
 
