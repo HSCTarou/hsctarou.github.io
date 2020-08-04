@@ -147,7 +147,7 @@ Microsoft Windows [Version 6.3.9600]
 
 ## Privilege Escalation
 
-For privesc we are going to use [winPEAS](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS) which is awesome for a system quick scan. We need to make sure to download the correct version of the binary as we are in a x64 machine.
+For privesc we are going to use [winPEAS](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS) which is awesome for a quick system scan. We need to make sure to download the correct version of the binary as we are in a x64 machine.
 
 ```batch
 Host Name:                 HACKPARK
