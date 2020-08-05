@@ -38,13 +38,13 @@ URL: ```http://10.10.203.246/Account/login.aspx```
 
 ![Login](/images/THM/HackPark/03-blog-login.png "Login"){: .align-center}
 
-As we know, the room description says we will be using hydra for bruteforcing. So, before that is important to know what is the default user for **Blogengine**. 
+As we know, the room description says we will be using Hydra for bruteforcing. So, before that is important to know what is the default user for **Blogengine**. 
 
-After a quick Google research we got **admin** as the default user and from now on just need to obtain the password through bruteforcing with Hydra.
+After a quick Google research we got **admin** as the default user and from now on just need to obtain the password through brute-forcing with Hydra.
 
-## Exploiting
+## Gain access
 
-For the tool to work, we need to specify the following information:
+After having decided to use Hydra, we must know what information to provide to make it work. For brute-forcing a web form the syntax is as follow:
 
 > hydra -l [User] -P [Pass] [Target IP] [Request Method] "[Login form Path]:[Request body]:[Failure message]"
 
@@ -134,7 +134,7 @@ listening on [any] 443 ...
 
 - Open the URL: ```http://10.10.203.246/?theme=../../App_Data/files```.
 
-Finally we get the reverse shell.
+Finally we get the reverse shell.  
 
 ```go
 ┌─[✗]─[root@parrot]─[/home/hsct/TryHackMe/HackPark]
