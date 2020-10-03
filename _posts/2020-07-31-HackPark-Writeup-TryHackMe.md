@@ -38,7 +38,7 @@ URL: ```http://10.10.203.246/Account/login.aspx```
 
 ![Login](/images/THM/HackPark/03-blog-login.png "Login"){: .align-center}
 
-As we know, the room description says we will be using Hydra for bruteforcing. So, before that is important to know what is the default user for **Blogengine**. 
+As we know, the room description says we'll be using Hydra for bruteforcing. So, before that is important to know what is the default user for **Blogengine**.
 
 After a quick Google research we got **admin** as the default user and from now on just need to obtain the password through brute-forcing with Hydra.
 

@@ -103,7 +103,7 @@ tag_archive:
   path: /tags/
 
 # Conversion
-markdown: kramdown
+#markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
