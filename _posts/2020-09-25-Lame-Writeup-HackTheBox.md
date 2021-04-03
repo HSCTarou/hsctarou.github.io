@@ -70,12 +70,6 @@ PORT     STATE SERVICE     VERSION
 445/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
 3632/tcp open  distccd     distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
 Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
-
-Host script results:
-|_ms-sql-info: ERROR: Script execution failed (use -d to debug)
-|_smb-os-discovery: ERROR: Script execution failed (use -d to debug)
-|_smb-security-mode: ERROR: Script execution failed (use -d to debug)
-|_smb2-time: Protocol negotiation failed (SMB2)
 ```
 
 A simple vista ya detectamos el puerto 21 abierto (FTP) y nmap nos identifica que dicho servicio tiene habilitado el login anónimo. Para verificarlo simplemente realizamos:
@@ -97,12 +91,19 @@ ftp> ls
 226 Directory send OK.
 ```
 
-Ingresamos al FTP pero vemos que no posee archivos ni directorios visibles.
+Ingresamos al FTP pero vemos que no posee archivos ni directorios visibles que nos puedan ser de utilidad.
 
-Continuando, también podemos observar que el puerto smb 445 se encuentra abierto, lo que podemos hacer es lanzar CrackMapExec sobre el servicio para ver que información nos muestra.
+Continuando, también podemos observar que el puerto smb 445 se encuentra abierto, lo que podemos hacer es lanzar ```CrackMapExec``` sobre el servicio para ver que información nos muestra.
 
 ![SMB](/images/HTB/Lame/04-smb.png "SMB"){: .align-center}
 
+Se verifica que el puerto está abierto con SMB v1. Ahora, revisando con smbmap se obtiene lo siguiente.
 
 ![SMB](/images/HTB/Lame/05-smb.png "SMB"){: .align-center}
+
+Se detecta que el directorio compartido ```tmp``` posee permisos de escritura/lectura y se puede acceder sin problemas con un usuario anónimo.
+
+![SMB](/images/HTB/Lame/06-smb.png "SMB"){: .align-center}
+
+Al identificar que esta máquina está bastante desactualizada, lo habitual sería verificar las versiones de los servicios que está corriendo y si existe alguna vulnerabilidad que se pueda explotar. Para ello se hace uso de la utilidad searchsploit para buscar posibles vectores de ataque.
 
