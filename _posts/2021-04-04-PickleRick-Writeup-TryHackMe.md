@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Pickle Rick - TryHackMe"
+title:  "Pickle Rick Writeup - TryHackMe"
 date:   2021-04-04 04:00:00 -0400
 classes: wide
 categories: THM
@@ -8,7 +8,7 @@ tags:
  - Privesc
 ---
 
-This time i'll be working with [Pickle Rick](https://www.tryhackme.com/room/picklerick) room from **TryHackMe**. This is a free lab with low difficulty.
+This time i'll be working with the room [Pickle Rick](https://www.tryhackme.com/room/picklerick) from **TryHackMe**. This is a free lab with an easy difficulty.
 
 ## Lab info
 
@@ -62,23 +62,25 @@ PORT   STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 31.34 seconds
 ```
 
-So, from all scans we get:
+So, after all those scans we get:
 
 * Webpage: http://10.10.123.34
 
 ![Web Page](/images/THM/PickleRick/15-web-page.png){: .align-center}
 
-As a good habit, you might want to check the source code of the webpages.
+As a good habit, you may want to check the source code of the webpages.
 
 ![Web Page Source Code](/images/THM/PickleRick/21-username.png){: .align-center}
 
 And just like that we get the username ```R1ckRul3s```
 
+---
+
 * Login: http://10.10.123.34/login.php
 
 ![Login Page](/images/THM/PickleRick/20-login-page.png){: .align-center}
 
-------
+---
 
 * Robots file: http://10.10.123.34/robots.txt
 
@@ -134,7 +136,7 @@ So, back to the Command Panel, let's assume we could execute system commands and
 
 ![ls](/images/THM/PickleRick/30-command-panel-ls.png){: .align-center}
 
-Making ```cat Sup3rS3cretPickl3Ingred.txt``` the following message will show up. 
+Executing ```cat Sup3rS3cretPickl3Ingred.txt``` the following message will show up. 
 
 ![cat](/images/THM/PickleRick/28-command-cat.png){: .align-center}
 
