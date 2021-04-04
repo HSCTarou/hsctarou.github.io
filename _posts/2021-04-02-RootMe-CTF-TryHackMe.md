@@ -61,7 +61,7 @@ http://10.10.253.211 [200 OK] Apache[2.4.29], Cookies[PHPSESSID], Country[RESERV
 ```
 Desde el navegador se visualiza la siguiente home page:
 
-![Lab Info](/images/THM/RootMe/05-web-page.png){: .align-center}
+![Web Page](/images/THM/RootMe/05-web-page.png){: .align-center}
 
 3 - What service is running on port 22?
 ```
@@ -94,11 +94,11 @@ Gobuster scan:
 
 ## Task 3 - Getting a shell
 
-Para esta tarea la plataforma solicita obtener una shell en base a lo que se ha descubierto anteriormente. Para ello revisamos la ruta ```http://10.10.253.211/panel/``` en donde se visualiza un panel para subir archivos:
+Para esta tarea la plataforma solicita obtener una shell en base a lo que se ha descubierto anteriormente. Para ello revisamos la ruta ```http://10.10.253.211/panel/``` en donde se visualiza un panel para subir archivos.
 
 ![Panel](/images/THM/RootMe/10-web-upload-page.png){: .align-center}
 
-Esto nos hace pensar que es posible subir un archivo que nos entable una reverse shell. Para que funcione, debemos saber que lenguaje de programación interpretará la página. Revisando en Wappalyzer vemos que la web está construida en ```php```
+Esto nos hace pensar que es posible subir un archivo que nos entable una reverse shell. Para que funcione, debemos saber que lenguaje que interpretará la página. Revisando en Wappalyzer vemos que la web está construida en ```php```
 
 ![PHP](/images/THM/RootMe/15-web-upload-language.png){: .align-center}
 

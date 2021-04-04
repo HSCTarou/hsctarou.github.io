@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Blocky Writeup [ES] - HackTheBox"
+title:  "Blocky Writeup [ES] (in progress) - HackTheBox"
 date:   2021-03-29 04:00:00 -0400
 classes: wide
 categories: HTB
