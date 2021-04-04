@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "RootMe CTF Writeup [ES] - TryHackMe"
+title:  "RootMe Writeup [ES] - TryHackMe"
 date:   2021-04-02 04:00:00 -0400
 classes: wide
 categories: THM
