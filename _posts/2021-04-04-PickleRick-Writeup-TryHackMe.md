@@ -136,7 +136,7 @@ Back at the Command Panel, let's assume we can run system commands and try a few
 
 ![ls](/images/THM/PickleRick/30-command-panel-ls.png){: .align-center}
 
-Executing ```cat Sup3rS3cretPickl3Ingred.txt```, the following message will show up. 
+Running ```cat Sup3rS3cretPickl3Ingred.txt``` the following message will show up. 
 
 ![cat](/images/THM/PickleRick/28-command-cat.png){: .align-center}
 
