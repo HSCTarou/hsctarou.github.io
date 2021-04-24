@@ -114,7 +114,7 @@ Probamos a subir el archivo y nos encontramos con el siguiente mensaje:
 
 Lo que nos da a entender que la extensión del archivo no es válida.
 
-Para lidiar con esto lo que se puede hacer es crear múltiples archivos con distinta extensión y probar uno a uno o bien realizar esta comprobación con **BurpSuite** lo cual resulta más cómodo. Recordar que existe un [room](https://www.tryhackme.com/room/rpburpsuite) en la plataforma de TryHackMe donde se puede aprender a utilizar BurpSuite desde cero.
+Para lidiar con esto, lo que se puede hacer es crear múltiples archivos con distinta extensión y probar uno a uno o bien realizar esta comprobación con **BurpSuite** lo cual resulta más cómodo. Recordar que existe un [room](https://www.tryhackme.com/room/rpburpsuite) en la plataforma de TryHackMe donde se puede aprender a utilizar BurpSuite desde cero.
 
 Dicho lo anterior, lo que se debe hacer es interceptar la subida del archivo y analizar la respuesta del lado del servidor hasta que nos dé una respuesta satisfactoria.
 
@@ -190,7 +190,7 @@ $ find \-perm -4000 2>/dev/null | grep -v "snap"
 ./bin/umount
 ```
 
-En base a lo obtenido y haciendo uso de la web [GTFObins](https://gtfobins.github.io/) podemos identificar que se puede explotar python para obtener una shell con privilegios elevados. En la sección de SUID nos indican como realizarlo.
+En base a lo obtenido y haciendo uso de la web [GTFObins](https://gtfobins.github.io/), podemos identificar que se puede explotar python para obtener una shell con privilegios elevados. En la sección de SUID nos indican como realizarlo.
 
 ![Web Ok](/images/THM/RootMe/45-gtfobins.png){: .align-center}
 
