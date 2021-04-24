@@ -3,6 +3,7 @@ layout: single
 title:  "Lame Writeup [ES] (in progress) - HackTheBox"
 date:   2020-09-24 03:50:00 -0400
 classes: wide
+published: false
 categories: HTB
 tags:
  - OSCP

@@ -1,7 +1,8 @@
 ---
 layout: single
 title:  "Resolute Writeup [ES] (in progress)- HackTheBox"
-date:   2021-04-24 20:00:00 -0400
+date:   2021-04-24 17:00:00 -0400
+published: false
 classes: wide
 categories: HTB
 tags:

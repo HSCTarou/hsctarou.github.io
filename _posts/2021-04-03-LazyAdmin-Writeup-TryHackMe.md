@@ -3,6 +3,7 @@ layout: single
 title:  "Lazy Admin Writeup (in progress) - TryHackMe"
 date:   2021-04-03 04:00:00 -0400
 classes: wide
+published: false
 categories: THM
 tags:
  - Privesc

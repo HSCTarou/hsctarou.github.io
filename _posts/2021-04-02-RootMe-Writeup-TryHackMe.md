@@ -98,7 +98,7 @@ Para esta tarea la plataforma solicita obtener una shell en base a lo que se ha 
 
 ![Panel](/images/THM/RootMe/10-web-upload-page.png){: .align-center}
 
-Esto nos hace pensar que es posible subir un archivo que nos entable una reverse shell. Para que funcione, debemos saber que lenguaje que interpretará la página. Revisando en Wappalyzer vemos que la web está construida en ```php```
+Esto nos hace pensar que es posible subir un archivo que nos entable una reverse shell. Para que funcione, debemos saber que lenguaje interpretará la página. Revisando en Wappalyzer vemos que la web está construida en ```php```
 
 ![PHP](/images/THM/RootMe/15-web-upload-language.png){: .align-center}
 
